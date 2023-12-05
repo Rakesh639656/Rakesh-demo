@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filp card</title>
+    <style>
+        .filp-card{
+            width: 350px;
+            height: 350px;
+            perspective: 1000;
+            /* background-color: aqua; */
+        }
+        .filp-card-inner{
+            position: relative;
+            width: 300px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transition: transform .8s;
+            
+        }
+        .filp-card-front, .filp-card-back{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility:hidden ;
+            -moz-backface-visibility: hidden;
+            -o-backface-visibility: hidden;
+            border-radius: 50px;
+            
+        }
+        .filp-card-front img{
+            width: 100%;
+            height: 100%; 
+        }
+        .filp-card-back img{
+            width: 100%;
+            height: 100%;
+        }
+        .filp-card-back{
+            transform: rotateY(180deg);
+            transition:transform 5s;
+        }
+        .filp-card:hover .filp-card-inner{
+            transform: rotateY(180deg);
+        }
+        /* .filp-card-back p{
+            color: red;
+            padding: 20px;
+            background-color: yellow;
+            font-size: 20px;
+            
+        } */
+  
+     
+    </style>
+</head>
+<body>
+   <div class="filp-card">
+    <div class="filp-card-inner">
+        <div class="filp-card-front">
+            <img src="image/arjit.jpg" alt="">
+        </div>
+        <div class="filp-card-back">
+            <img src="image/arjun.jfif" alt=""> 
+            <!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing
+                 elit. Perferendis officiis ab atque odio magni
+                  aspernatur provident, temporibus repellendus itaque
+                   quibusdam obcaecati eveniet perspiciatis voluptatem 
+                   et omnis veniam, nobis ipsam adipisci.</p> -->
+
+        </div>
+    </div>
+   </div> 
+</body>
+</html>
